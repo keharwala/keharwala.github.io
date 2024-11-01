@@ -3,30 +3,89 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+body {
+  margin: 0;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.responsive-iframe {
-  position: absolute;
+.header {
+  position: fixed;
   top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  z-index: 1;
   width: 100%;
-  height: 100%;
-  border: none;
+  background-color: #f1f1f1;
+}
+
+.header h2 {
+  text-align: center;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #04AA6D;
+  width: 0%;
+}
+
+.content {
+  padding: 100px 0;
+  margin: 50px auto 0 auto;
+  width: 80%;
 }
 </style>
 </head>
 <body>
 
-<div class="container"> 
-  <iframe class="responsive-iframe" src="http://keh.zya.me/"></iframe>
+<div class="header">
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>  
 </div>
 
+<div class="content">
+  <h3>Today <b>Friday</b> 1st November</h3>
+  <p>Ak should talk to Fufa Ji for batwara meeting in Keharwala with RK and all top persons</p>
+
+  <h3>Tommorow <b>Saturday</b> 2nd November</h3>
+  <p>Prepare for next day meeting</p>
+
+  <h3> Day After tomorrow <b>Sunday</b> 3rd November</h3>
+  <p>Meeting all for solution</p>
+
+  <h3>Monday 4th November</h3>
+  <p></p>
+
+  <h3>Tuesday 5th November</h3>
+  <p>RK going back to Delhi</p>
+
+  <h3>Saturday 9th November 9AM</h3>
+  <p>RK going back to Australia with Subhash from Delhi</p>
+
+  <h3>Khet Date</h3>
+  <p>30-01-2025</p>
+
+  <h3>Ghar Date</h3>
+  <p>24-04-2025</p>
+
+</div>
+
+<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+
 </body>
-</html>
+</html> 
